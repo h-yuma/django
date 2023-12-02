@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="alert alert-dark" role="alert">
+    <h4 class="alert-heading">Detail</h4>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ object.title }}</h5>
+        <p class="card-text">{{ object.memo }}</p>
+        <p class="card-text"><strong>Priority:</strong> {{ object.priority }}</p>
+        <p class="card-text"><strong>Due Date:</strong> {{ object.duedate|date:"o/n/j" }}</p>
+    </div>
+</div>
+{% endblock content %}

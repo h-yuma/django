@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="my-4">Todo削除</h1>
+  <div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ object.title }}</h5>
+        <p class="card-text">{{ object.memo }}</p>
+        <p class="card-text"><strong>Priority:</strong> {{ object.priority }}</p>
+        <p class="card-text"><strong>Due Date:</strong> {{ object.duedate|date:"o/n/j" }}</p>
+    </div>
+   </div>
+  <form action="" method="POST" class="my-4">
+    {% csrf_token %}
+    <div class="mb-3">
+      <p>本当にこのTodoを削除しますか？</p>
+    </div>
+    <button type="submit" class="btn btn-danger">削除</button>
+  </form>
+</div>
+{% endblock content %}
